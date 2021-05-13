@@ -14,7 +14,7 @@ class RandomNumberService : Service() {
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
 
-        toast("Service started..")
+        toast("Service started.")
 
 
         mHandler = Handler()
