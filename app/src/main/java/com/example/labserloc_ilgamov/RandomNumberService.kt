@@ -26,7 +26,7 @@ class RandomNumberService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        toast("Service destroyed.")
+        toast("Service destroyed...")
         mHandler.removeCallbacks(mRunnable)
     }
 
