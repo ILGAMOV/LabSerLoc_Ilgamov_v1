@@ -5,25 +5,31 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#042C32"
-    android:orientation="horizontal"
-    android:padding="22dp">
+    android:background="#F0191845"
+    android:orientation="vertical"
+    android:padding="5dp">
 
     <Button
         android:id="@+id/button_start"
-        android:layout_width="wrap_content"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:shadowColor="#FFFFFF"
         android:text="Запустить сервис" />
 
     <Button
         android:id="@+id/button_stop"
-        android:layout_width="wrap_content"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
-        android:text="Stop Service" />
+        android:backgroundTint="#FFFFFF"
+        android:shadowColor="#FFFFFF"
+        android:text="Остановить сервис" />
 
     <Button
         android:id="@+id/button_stats"
-        android:layout_width="wrap_content"
+        android:layout_width="162dp"
         android:layout_height="wrap_content"
-        android:text="Service Stats" />
+        android:backgroundTint="#FFFFFF"
+        android:text="Отобразить работу сервиса" />
+
 </LinearLayout>
