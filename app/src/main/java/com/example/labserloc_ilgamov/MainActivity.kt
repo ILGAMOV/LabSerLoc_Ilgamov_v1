@@ -7,6 +7,7 @@ import android.content.Context
 import android.widget.Toast
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -23,7 +24,10 @@ class MainActivity : AppCompatActivity() {
 
 //Локация
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
-        fetchLocation()
+        findViewById<Button>(R.id.btn_get_location).setOnClickListener {
+            fetchLocation()
+        }
+
 
         val serviceClass = RandomNumberService::class.java
         val intent = Intent(applicationContext, serviceClass)
