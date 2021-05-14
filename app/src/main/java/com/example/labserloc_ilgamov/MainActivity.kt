@@ -7,8 +7,12 @@ import android.content.Context
 import android.widget.Toast
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.location.FusedLocationProviderClient
 
 class MainActivity : AppCompatActivity() {
+
+    //Локация
+    lateinit var fusedLocationProviderClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +66,9 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 }
+
 fun Context.toast(message:String){
     Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT).show()
+
+
 }
