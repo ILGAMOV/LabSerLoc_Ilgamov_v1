@@ -1,8 +1,12 @@
 package com.example.labserloc_ilgamov
+
 import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
+import java.util.*
+
+
 class RandomNumberService : Service() {
 
     private lateinit var mHandler: Handler
@@ -13,9 +17,7 @@ class RandomNumberService : Service() {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-
         toast("Service started.")
-
 
         mHandler = Handler()
         mRunnable = Runnable { showRandomNumber() }
@@ -26,10 +28,9 @@ class RandomNumberService : Service() {
 
     override fun onDestroy() {
         super.onDestroy()
-        toast("Service destroyed...")
+        toast("Service destroyed.")
         mHandler.removeCallbacks(mRunnable)
     }
-
 
     private fun showRandomNumber() {
         val rand = Random()
