@@ -17,25 +17,25 @@ class RandomNumberService : Service() {
     }
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
-        toast("Service started.")
+        toast("Сервис запущен.")
 
         mHandler = Handler()
         mRunnable = Runnable { showRandomNumber() }
-        mHandler.postDelayed(mRunnable, 5000)
+        mHandler.postDelayed(mRunnable, 5000) //милисек
 
         return Service.START_STICKY
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        toast("Service destroyed.")
+        toast("Сервис отключен.")
         mHandler.removeCallbacks(mRunnable)
     }
 
     private fun showRandomNumber() {
         val rand = Random()
         val number = rand.nextInt(100)
-        toast("Random Number : $number")
+        toast("Генерация рандомного числа сервисом активна. Рандомное число: $number")
         mHandler.postDelayed(mRunnable, 5000)
     }
 }

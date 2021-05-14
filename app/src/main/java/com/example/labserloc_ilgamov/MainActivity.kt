@@ -39,3 +39,29 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // активность генерации чисел
+        button_stats.setOnClickListener{
+            if (isServiceRunning(serviceClass)) {
+                toast("Сервис запущен.")
+            } else {
+                toast("Сервис остановлен.")
+            }
+
+        }
+    }
+
+    private fun isServiceRunning(serviceClass: Class<*>): Boolean {
+        val activityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+
+
+        for (service in activityManager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.name == service.service.className) {
+
+                return true
+            }
+        }
+        return false
+    }
+}
+fun Context.toast(message:String){
+    Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT).show()
+}
