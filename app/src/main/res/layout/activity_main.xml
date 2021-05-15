@@ -9,9 +9,21 @@
     android:orientation="vertical"
     android:padding="5dp">
 
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:text='1. Для работы сервиса нужно нажать кнопку "запустить сервис", работоспособность сервиса можно проверить путем нажатия кнопки "отобразить работу сервиса". Приложение начнет генерацию случайных чисел даже при свернутом приложении.'
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#00FFFFFF"
+        android:textSize="12sp" />
+
     <Button
         android:id="@+id/button_start"
-        android:layout_width="162dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:shadowColor="#FFFFFF"
@@ -19,7 +31,7 @@
 
     <Button
         android:id="@+id/button_stop"
-        android:layout_width="162dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:shadowColor="#FFFFFF"
@@ -27,14 +39,26 @@
 
     <Button
         android:id="@+id/button_stats"
-        android:layout_width="162dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
         android:text="Отобразить работу сервиса" />
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FFFFFF"
+        android:fontFamily="sans-serif-medium"
+        android:text='2. Для работы геолокации требуется нажать кнопку "локация" и дать разрешение приложению на обнаружение координат. Далее (либо предварительно) нужно включить геолокацию на самом телефоне, чтобы приложение могло показать координаты. После этого требуется нажать кнопку "локация" и приложение отобразит координаты места. Прогрузка отображения координат иногда занимает +/- одну минуту.'
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#00FFFFFF"
+        android:textSize="12sp" />
+
     <Button
         android:id="@+id/btn_get_location"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFFFFF"
 

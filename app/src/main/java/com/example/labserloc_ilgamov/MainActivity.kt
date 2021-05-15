@@ -14,24 +14,24 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 class MainActivity : AppCompatActivity() {
-
-//Локация
+// ЛОКАЦИЯ
     lateinit var fusedLocationProviderClient: FusedLocationProviderClient
-
+//
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//Локация
+// ЛОКАЦИЯ
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         findViewById<Button>(R.id.btn_get_location).setOnClickListener {
             fetchLocation()
         }
-
+//
 
         val serviceClass = RandomNumberService::class.java
         val intent = Intent(applicationContext, serviceClass)
 
+// СЕРВИС
         // кнопка старт
         button_start.setOnClickListener{
 
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
                 stopService(intent)
             } else {
-                toast("Service already stopped.")
+                toast("Сервис остановлен.")
             }
         }
         // активность генерации чисел
@@ -62,7 +62,9 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+//
 
+// ЛОКАЦИЯ
     private fun fetchLocation()
     {
         val task = fusedLocationProviderClient.lastLocation
@@ -79,8 +81,9 @@ class MainActivity : AppCompatActivity() {
             }
     }
     }
+//
 
-
+// СЕРВИС
     private fun isServiceRunning(serviceClass: Class<*>): Boolean {
         val activityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
 
@@ -97,6 +100,4 @@ class MainActivity : AppCompatActivity() {
 
 fun Context.toast(message:String){
     Toast.makeText(applicationContext,message,Toast.LENGTH_SHORT).show()
-
-
 }
